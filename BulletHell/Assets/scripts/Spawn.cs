@@ -16,6 +16,7 @@ public class Spawn : MonoBehaviour {
 	void Start () {
         pos.y = -7;
         Instantiate(player, pos,transform.rotation);
+        
         pos.y = 7;
         Instantiate(enemy, pos, transform.rotation);
 	}

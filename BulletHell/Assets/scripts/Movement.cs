@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     private Transform target;
 
+    Vector3 Direction;
+
     [SerializeField]
     Rigidbody bullet;
 
@@ -32,8 +34,10 @@ public class Movement : MonoBehaviour {
         Pos_mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Pos_mouse.z = 0;
 
-
-        Vector3 Direction = (target.position - transform.position).normalized;
+        if (target != null)
+        {
+            Direction = (target.position - transform.position).normalized;
+        }
 
         mouseposition = transform.position;
         mouseposition.y += 1;
@@ -43,8 +47,12 @@ public class Movement : MonoBehaviour {
         {
             if (timerl >= 0.2f)
             {
-                Rigidbody newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
-                newProjectile.AddForce(Direction * 1000);
+                if (bullet != null)
+                {
+                    Rigidbody newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+
+                    newProjectile.AddForce(Direction * 1000);
+                }
                 timerl = 0;
             }
         }

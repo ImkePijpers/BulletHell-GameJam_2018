@@ -107,5 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704ee6e085dfbb74e83fb1849555d606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4323159732690974, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
+  target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
   bullet: {fileID: 54716461374533092, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
+  Bulletspeed: 1000
+  firingspeed: 0.2
