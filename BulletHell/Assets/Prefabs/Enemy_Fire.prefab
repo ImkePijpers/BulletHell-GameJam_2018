@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61820055840342174}
   - component: {fileID: 212048759977830320}
   m_Layer: 8
-  m_Name: Quick_Enemy
+  m_Name: Enemy_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
