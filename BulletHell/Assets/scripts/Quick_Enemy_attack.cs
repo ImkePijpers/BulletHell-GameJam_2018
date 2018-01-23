@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Quick_Enemy_attack : MonoBehaviour {
+public class Quick_Enemy_attack : Bullet
+{
 
     
     public GameObject target;
@@ -12,44 +13,65 @@ public class Quick_Enemy_attack : MonoBehaviour {
     Rigidbody2D bullet;
 
     [SerializeField]
-    float Bulletspeed = 1000;
+    float m_BulletSpeed;
     [SerializeField]
-    float firingspeed = 0.2f;
+    float m_FiringSpeed = 0.2f;
 
     float timerl;
+    float m_Speed;
+    float firingspeed;
 
     Vector3 Direction;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public override void Find_Target()
+    {
+        Target = GameObject.FindWithTag("Player");
+        Debug.Log(Target);
+    }
 
+    public override void Bullet_Speed()
+    {
+        m_Speed = m_BulletSpeed;
+    }
+    public override void BulletFiringSpeed()
+    {
+        firingspeed = m_FiringSpeed;
+    }
 
-        target = GameObject.FindWithTag("Player");
+    // Update is called once per frame
+    void Update () {
+        Find_Target();
+        Bullet_Speed();
+        BulletFiringSpeed();
 
+        //target = GameObject.FindWithTag("Player");
 
-
-        
-
+<<<<<<< HEAD
+       // Debug.Log(target);
+       // Debug.Log(Direction);
+        if (Target != null)
+=======
         //Debug.Log(target);
         //Debug.Log(Direction);
         if (target != null)
+>>>>>>> d4a22550c60bebcd04332dc24a66cae6a0b96daa
         {
 
             //target_loc.position = target.transform.position;
-            Direction = (target.transform.position - transform.position).normalized;
+            Direction = (Target.transform.position - transform.position).normalized;
 
             timerl += Time.deltaTime;
 
             if (timerl >= firingspeed)
             {
 
+<<<<<<< HEAD
+                Rigidbody newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+                newProjectile.AddForce(Direction * m_BulletSpeed);
+=======
                 Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
                 newProjectile.AddForce(Direction * Bulletspeed);
+>>>>>>> d4a22550c60bebcd04332dc24a66cae6a0b96daa
                 timerl = 0;
             }
         }
