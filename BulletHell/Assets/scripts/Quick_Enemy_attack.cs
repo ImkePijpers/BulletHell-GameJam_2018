@@ -17,10 +17,12 @@ public class Quick_Enemy_attack : Bullet
     public GameObject target;
     Transform target_loc;
     float timerl;
+    float timetotime = 25;
     float timer_180attack;
     float m_Speed;
     float firingspeed;
     Vector3 Direction;
+    float wizardshootfaster = 450;
 
     public override void Find_Target()
     {
@@ -51,41 +53,56 @@ public class Quick_Enemy_attack : Bullet
             Direction = (Target.transform.position - transform.position).normalized;
 
             timerl += Time.deltaTime;
+            wizardshootfaster += Time.deltaTime;
+
             timer_180attack += Time.deltaTime;
 
-            if (timerl >= firingspeed)
+            for (int i = 0; i < wizardshootfaster; i++)
             {
-                
-                Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
-                newProjectile.AddForce(Direction * m_BulletSpeed);
+                if (timerl >= firingspeed)
+                {
 
+                    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                    newProjectile.AddForce(Direction *( m_BulletSpeed +(m_BulletSpeed*i)));
+                    wizardshootfaster += 1;
+                    timerl = 0;
+                }
+            }
+                
+
+            //if (timerl >= firingspeed && wizardshootfaster <= 30)
+            //{
+            //    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+            //    newProjectile.AddForce(Direction * (m_BulletSpeed + (m_BulletSpeed * 0.5f)));
+            //    wizardshootfaster += 1;
+            //    timerl = 0;
+            //}
+            /*if (timerl >= firingspeed && wizardshootfaster <= 90)
+            {
+                Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                newProjectile.AddForce(Direction * (m_BulletSpeed + (m_BulletSpeed * 0.8f)));
+                wizardshootfaster += 1;
                 timerl = 0;
             }
-
-            if (timer_180attack >= 5f)
+            if (timerl >= firingspeed && wizardshootfaster <= 120)
             {
-                //for(float i = 0; i <= 100; i += 10)
-                //{
-                //    enemy_attackangle.y += i;
-                //    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
-                //    Direction.x += 0.3f;
-                //    newProjectile.AddForce(Direction * m_BulletSpeed);
-                //}
-                //timer_180attack = 0;
-
-                //Direction = (Target.transform.position - transform.position).normalized;
-
-                //for (float i = 0; i <= 100; i += 10)
-                //{
-                //    enemy_attackangle.y += i;
-                //    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
-                //    Direction.x -= 0.3f;
-                //    newProjectile.AddForce(Direction * m_BulletSpeed);
-                //}
-                timer_180attack = 0;
+                Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                newProjectile.AddForce(Direction * (m_BulletSpeed + (m_BulletSpeed * 1f)));
+                wizardshootfaster += 1;
+                timerl = 0;
             }
+            if (timerl >= firingspeed && wizardshootfaster <= 180)
+            {
+                Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                newProjectile.AddForce(Direction * (m_BulletSpeed + (m_BulletSpeed * 1.4f)));
+                wizardshootfaster += 1;
+                timerl = 0;
+            }*/
 
-            
+
+
+
+
 
         }
 
