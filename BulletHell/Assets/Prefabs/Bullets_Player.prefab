@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 23413392715872578}
   - component: {fileID: 114140529743385938}
   - component: {fileID: 50465269570391874}
-  - component: {fileID: 58456784427503638}
+  - component: {fileID: 58782863987126932}
   m_Layer: 0
   m_Name: Bullets_Player
-  m_TagString: Bullet
+  m_TagString: Player_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!58 &58456784427503638
+--- !u!58 &58782863987126932
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

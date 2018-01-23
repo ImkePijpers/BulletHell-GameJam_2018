@@ -44,17 +44,16 @@ public class Quick_Enemy_attack : Bullet
         Bullet_Speed();
         BulletFiringSpeed();
 
-        //target = GameObject.FindWithTag("Player");
+        //Target = GameObject.FindWithTag("Player");
 
-<<<<<<< HEAD
+
        // Debug.Log(target);
        // Debug.Log(Direction);
-        if (Target != null)
-=======
+
+
         //Debug.Log(target);
-        //Debug.Log(Direction);
+        Debug.Log(Direction);
         if (target != null)
->>>>>>> d4a22550c60bebcd04332dc24a66cae6a0b96daa
         {
 
             //target_loc.position = target.transform.position;
@@ -65,13 +64,12 @@ public class Quick_Enemy_attack : Bullet
             if (timerl >= firingspeed)
             {
 
-<<<<<<< HEAD
-                Rigidbody newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
-                newProjectile.AddForce(Direction * m_BulletSpeed);
-=======
+
+                
+
                 Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
-                newProjectile.AddForce(Direction * Bulletspeed);
->>>>>>> d4a22550c60bebcd04332dc24a66cae6a0b96daa
+                newProjectile.AddForce(Direction * m_BulletSpeed);
+
                 timerl = 0;
             }
         }

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4013280208462026}
   - component: {fileID: 114706092213494210}
   - component: {fileID: 61087707152704704}
+  - component: {fileID: 50781967526644336}
   m_Layer: 0
   m_Name: Collision for enemy
   m_TagString: Untagged
@@ -37,9 +38,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4921991488194406}
   - component: {fileID: 33392399936639110}
-  - component: {fileID: 65201006467518638}
   - component: {fileID: 23591634776687406}
   - component: {fileID: 114712162891073922}
+  - component: {fileID: 61882531706185108}
   m_Layer: 0
   m_Name: Quick_Enemy 1
   m_TagString: Untagged
@@ -115,6 +116,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824392076217388}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!50 &50781967526644336
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502410088760536}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61087707152704704
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -140,18 +161,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96386147, y: 1.0361366}
   m_EdgeRadius: 0
---- !u!65 &65201006467518638
-BoxCollider:
+--- !u!61 &61882531706185108
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824392076217388}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &114706092213494210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,7 +197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20422b1ab1ac94d488bc884c43f9e487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy_death: {fileID: 0}
+  Enemy_death: {fileID: 1824392076217388}
+  playerBullet: {fileID: 1299878620973556, guid: 06e045c8e1a4c3b418b79112cc275725,
+    type: 2}
 --- !u!114 &114712162891073922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,7 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704ee6e085dfbb74e83fb1849555d606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  m_Bullet: {fileID: 0}
   target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
-  bullet: {fileID: 54716461374533092, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
-  Bulletspeed: 1000
-  firingspeed: 0.2
+  bullet: {fileID: 50936026729668048, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
+  m_BulletSpeed: 0
+  m_FiringSpeed: 0.2
