@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour {
     Vector3 Direction;
 
     [SerializeField]
-    Rigidbody bullet;
+    Rigidbody2D bullet;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour {
             {
                 if (bullet != null)
                 {
-                    Rigidbody newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+                    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
 
                     newProjectile.AddForce(Direction * 1000);
                 }
@@ -58,4 +58,13 @@ public class Movement : MonoBehaviour {
         }
 
 	}
+
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy_Bullet")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

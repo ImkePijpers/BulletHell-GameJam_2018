@@ -9,7 +9,7 @@ public class Quick_Enemy_attack : MonoBehaviour {
     Transform target_loc;
 
     [SerializeField]
-    Rigidbody bullet;
+    Rigidbody2D bullet;
 
     [SerializeField]
     float Bulletspeed = 1000;
@@ -35,8 +35,8 @@ public class Quick_Enemy_attack : MonoBehaviour {
 
         
 
-        Debug.Log(target);
-        Debug.Log(Direction);
+        //Debug.Log(target);
+        //Debug.Log(Direction);
         if (target != null)
         {
 
@@ -48,11 +48,20 @@ public class Quick_Enemy_attack : MonoBehaviour {
             if (timerl >= firingspeed)
             {
 
-                Rigidbody newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+                Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
                 newProjectile.AddForce(Direction * Bulletspeed);
                 timerl = 0;
             }
         }
 
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player_Bullet")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 }
