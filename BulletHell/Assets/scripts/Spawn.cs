@@ -8,6 +8,8 @@ public class Spawn : MonoBehaviour {
     public GameObject player;
     [SerializeField]
     public GameObject enemy;
+    [SerializeField]
+    public GameObject minion;
 
 
     Vector3 pos;
@@ -19,6 +21,10 @@ public class Spawn : MonoBehaviour {
         
         pos.y = 7;
         Instantiate(enemy, pos, transform.rotation);
+
+        pos.y = 7;
+        pos.x = 7;
+        Instantiate(minion, pos, transform.rotation);
 	}
 	
 	// Update is called once per frame
