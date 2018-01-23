@@ -52,7 +52,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -68,7 +67,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -107,7 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704ee6e085dfbb74e83fb1849555d606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
+  m_Bullet: {fileID: 54716461374533092, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
   target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
   bullet: {fileID: 54716461374533092, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
-  Bulletspeed: 1000
-  firingspeed: 0.2
+  m_BulletSpeed: 1000
+  m_FiringSpeed: 0.2

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Quick_Enemy_attack : MonoBehaviour {
+public class Quick_Enemy_attack : Bullet
+{
 
     
     public GameObject target;
@@ -12,36 +13,46 @@ public class Quick_Enemy_attack : MonoBehaviour {
     Rigidbody bullet;
 
     [SerializeField]
-    float Bulletspeed = 1000;
+    float m_BulletSpeed;
     [SerializeField]
-    float firingspeed = 0.2f;
+    float m_FiringSpeed = 0.2f;
 
     float timerl;
+    float m_Speed;
+    float firingspeed;
 
     Vector3 Direction;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public override void Find_Target()
+    {
+        Target = GameObject.FindWithTag("Player");
+        Debug.Log(Target);
+    }
 
+    public override void Bullet_Speed()
+    {
+        m_Speed = m_BulletSpeed;
+    }
+    public override void BulletFiringSpeed()
+    {
+        firingspeed = m_FiringSpeed;
+    }
 
-        target = GameObject.FindWithTag("Player");
+    // Update is called once per frame
+    void Update () {
+        Find_Target();
+        Bullet_Speed();
+        BulletFiringSpeed();
 
+        //target = GameObject.FindWithTag("Player");
 
-
-        
-
-        Debug.Log(target);
-        Debug.Log(Direction);
-        if (target != null)
+       // Debug.Log(target);
+       // Debug.Log(Direction);
+        if (Target != null)
         {
 
             //target_loc.position = target.transform.position;
-            Direction = (target.transform.position - transform.position).normalized;
+            Direction = (Target.transform.position - transform.position).normalized;
 
             timerl += Time.deltaTime;
 
@@ -49,7 +60,7 @@ public class Quick_Enemy_attack : MonoBehaviour {
             {
 
                 Rigidbody newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
-                newProjectile.AddForce(Direction * Bulletspeed);
+                newProjectile.AddForce(Direction * m_BulletSpeed);
                 timerl = 0;
             }
         }
