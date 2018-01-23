@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     float m_BulletFiring_Speed = 0.6f;
 
     [SerializeField]
-    Rigidbody m_Bullet;
+    Rigidbody2D m_Bullet;
 
    
 

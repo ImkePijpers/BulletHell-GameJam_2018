@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Minion : Bullet
 {
-    //public GameObject Target;
+
     Transform Minion_Position;
     Vector3 Direction;
+    public GameObject target;
+    Transform target_loc;
+    float m_Speed;
+    float firingspeed;
     float Timer;
 
     [SerializeField]
-    Rigidbody Bullet;
+    Rigidbody2D Bullet;
     [SerializeField]
     float m_Bullet_Speed = 100;
     [SerializeField]
     float m_BulletFiring_Speed = 0.6f;
+
     public override void Find_Target()
     {
         //Target = GameObject.FindWithTag("Player");
@@ -23,18 +28,13 @@ public class Minion : Bullet
 
     public override void Bullet_Speed()
     {
-        m_Bullet_Speed = 100;
+       m_Speed= m_Bullet_Speed;
     }
     public override void BulletFiringSpeed()
     {
-        m_BulletFiring_Speed = 1;
+       firingspeed = m_BulletFiring_Speed = 1;
     }
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -45,7 +45,7 @@ public class Minion : Bullet
         Debug.Log(Target);
         Debug.Log(Direction);
 
-        
+
 
 
     }
