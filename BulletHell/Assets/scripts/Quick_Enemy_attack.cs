@@ -22,7 +22,7 @@ public class Quick_Enemy_attack : Bullet
     float m_Speed;
     float firingspeed;
     Vector3 Direction;
-    float wizardshootfaster = 450;
+    float wizardshootfaster = 800;
 
     public override void Find_Target()
     {
@@ -59,13 +59,14 @@ public class Quick_Enemy_attack : Bullet
 
             for (int i = 0; i < wizardshootfaster; i++)
             {
-                if (timerl >= firingspeed)
+                if (timerl >= m_FiringSpeed)
                 {
 
                     Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
                     newProjectile.AddForce(Direction *( m_BulletSpeed +(m_BulletSpeed*i)));
                     wizardshootfaster += 1;
                     timerl = 0;
+                    
                 }
             }
                 
