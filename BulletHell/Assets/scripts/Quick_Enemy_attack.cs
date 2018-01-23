@@ -41,7 +41,7 @@ public class Quick_Enemy_attack : Bullet
         BulletFiringSpeed();
         Debug.Log(Direction);
 
-        if (target != null)
+        if (Target != null)
         {
 
             //target_loc.position = target.transform.position;
