@@ -11,7 +11,7 @@ public class Minion : Bullet
     Transform target_loc;
     float m_Speed;
     float firingspeed = 0.6f;
-    float Timer;
+    private float Timer;
     Vector3 enemy_attackangle;
     [SerializeField]
     Rigidbody2D Bullet;
