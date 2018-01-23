@@ -44,8 +44,15 @@ public class Minion : Bullet
 
         Debug.Log(Target);
         Debug.Log(Direction);
+        Timer += Time.deltaTime;
+        if (Timer >= firingspeed)
+        {
 
+            Rigidbody2D newProjectile = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody2D;
+            newProjectile.AddForce(Direction * m_Bullet_Speed);
 
+            Timer = 0;
+        }
 
 
     }
