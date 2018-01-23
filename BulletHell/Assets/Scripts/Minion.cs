@@ -6,7 +6,7 @@ public class Minion : Bullet
 {
 
     Transform Minion_Position;
-    Vector3 Direction;
+    private Vector3 Direction;
     public GameObject target;
     Transform target_loc;
     float m_Speed;
@@ -55,28 +55,40 @@ public class Minion : Bullet
 
             if (Timer >= m_BulletFiring_Speed)
             {
-
+                
                 for (float i = 0; i <= 30; i += 10)
                 {
-                    enemy_attackangle.y += i;
+                    //enemy_attackangle.x -= i;
                     Rigidbody2D newProjectile = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody2D;
-                    Direction.x += 0.3f;
+                    Direction.x -= 0.3f;
                     newProjectile.AddForce(Direction * m_Bullet_Speed);
                 }
                 Timer = 0;
 
                 Direction = (Target.transform.position - transform.position).normalized;
+                
 
                 for (float i = 0; i <= 30; i += 10)
                 {
-                    enemy_attackangle.y += i;
+                    //enemy_attackangle.x -= i;
                     Rigidbody2D newProjectile = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody2D;
-                    Direction.x -= 0.3f;
+                    Direction.x += 0.3f;
                     newProjectile.AddForce(Direction * m_Bullet_Speed);
                 }
             }
 
 
+        }
+
+        
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player_Bullet")
+        {
+            Destroy(this.gameObject);
+            //Destroy(collision.gameObject);
         }
     }
 }

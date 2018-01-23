@@ -96,6 +96,7 @@ public class Quick_Enemy_attack : Bullet
         if (collision.collider.tag == "Player_Bullet")
         {
             Destroy(this.gameObject);
+            
         }
     }
 
