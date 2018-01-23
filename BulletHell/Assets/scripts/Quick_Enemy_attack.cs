@@ -12,9 +12,12 @@ public class Quick_Enemy_attack : Bullet
     [SerializeField]
     float m_FiringSpeed = 0.2f;
 
+
+    Vector3 enemy_attackangle;
     public GameObject target;
     Transform target_loc;
     float timerl;
+    float timer_180attack;
     float m_Speed;
     float firingspeed;
     Vector3 Direction;
@@ -48,6 +51,7 @@ public class Quick_Enemy_attack : Bullet
             Direction = (Target.transform.position - transform.position).normalized;
 
             timerl += Time.deltaTime;
+            timer_180attack += Time.deltaTime;
 
             if (timerl >= firingspeed)
             {
@@ -57,6 +61,32 @@ public class Quick_Enemy_attack : Bullet
 
                 timerl = 0;
             }
+
+            if (timer_180attack >= 5f)
+            {
+                for(float i = 0; i <= 100; i += 10)
+                {
+                    enemy_attackangle.y += i;
+                    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                    Direction.x += 0.3f;
+                    newProjectile.AddForce(Direction * m_BulletSpeed);
+                }
+                timer_180attack = 0;
+
+                Direction = (Target.transform.position - transform.position).normalized;
+
+                for (float i = 0; i <= 100; i += 10)
+                {
+                    enemy_attackangle.y += i;
+                    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                    Direction.x -= 0.3f;
+                    newProjectile.AddForce(Direction * m_BulletSpeed);
+                }
+                timer_180attack = 0;
+            }
+
+            
+
         }
 
     }
