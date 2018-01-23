@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 33209858491604140}
   - component: {fileID: 65411728802343076}
   - component: {fileID: 23200435340838130}
+  - component: {fileID: 114445391228313498}
   m_Layer: 0
-  m_Name: Cube 1
+  m_Name: Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,3 +94,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114445391228313498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739431703360178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf5f32773470914e9f559bcf8c104c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
+  m_Bullet: {fileID: 0}
+  target: {fileID: 1739431703360178}
+  Bullet: {fileID: 0}
+  m_Bullet_Speed: 100
+  m_BulletFiring_Speed: 0.6
