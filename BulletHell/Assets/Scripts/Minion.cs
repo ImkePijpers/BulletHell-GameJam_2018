@@ -12,7 +12,7 @@ public class Minion : Bullet
     float m_Speed;
     float firingspeed = 0.6f;
     float Timer;
-
+    Vector3 enemy_attackangle;
     [SerializeField]
     Rigidbody2D Bullet;
     [SerializeField]
@@ -56,10 +56,24 @@ public class Minion : Bullet
             if (Timer >= m_BulletFiring_Speed)
             {
 
-                Rigidbody2D newProjectile = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody2D;
-                newProjectile.AddForce(Direction * m_Bullet_Speed);
-
+                for (float i = 0; i <= 30; i += 10)
+                {
+                    enemy_attackangle.y += i;
+                    Rigidbody2D newProjectile = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody2D;
+                    Direction.x += 0.3f;
+                    newProjectile.AddForce(Direction * m_Bullet_Speed);
+                }
                 Timer = 0;
+
+                Direction = (Target.transform.position - transform.position).normalized;
+
+                for (float i = 0; i <= 30; i += 10)
+                {
+                    enemy_attackangle.y += i;
+                    Rigidbody2D newProjectile = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody2D;
+                    Direction.x -= 0.3f;
+                    newProjectile.AddForce(Direction * m_Bullet_Speed);
+                }
             }
 
 
