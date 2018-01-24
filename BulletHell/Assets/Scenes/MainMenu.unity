@@ -409,7 +409,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1203355579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcfed26dae9a7ae438884ce16e60cb58, type: 3}
+  m_Script: {fileID: 11500000, guid: 945614e655b0b2a4598b016c0c82ddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1203355582
@@ -452,11 +452,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1203355581}
-        m_MethodName: 
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -734,12 +734,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1849605801}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: LoadByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
