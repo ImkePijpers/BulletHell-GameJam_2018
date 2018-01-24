@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour {
     private Transform target;
 
     Vector3 Direction;
-    int health = 999;
+    int health = 3;
     [SerializeField]
     Rigidbody2D bullet;
 
@@ -61,10 +61,13 @@ public class Movement : MonoBehaviour {
 	}
 
 
-    public void OnCollisionEnter2D(Collision2D collision)///player death by bullets
+    public void OnCollisionEnter2D(Collision2D collision)///player death
     {
         if (collision.collider.tag == "Enemy_Bullet")
         {
+
+            
+            
 
             health -= 1;
             if (health <= 0)
