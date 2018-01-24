@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour {
     private Transform target;
 
     Vector3 Direction;
-
+    int health = 3;
     [SerializeField]
     Rigidbody2D bullet;
 
@@ -64,7 +64,11 @@ public class Movement : MonoBehaviour {
     {
         if (collision.collider.tag == "Enemy_Bullet")
         {
-            Destroy(this.gameObject);
+            health -= 1;
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
