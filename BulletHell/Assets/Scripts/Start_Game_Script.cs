@@ -6,25 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class Start_Game_Script : MonoBehaviour
 {
-    [SerializeField]
-    private Button Start_Button;
-
-    
-	void Start ()
+    public void LoadByIndex(int sceneIndex)
     {
-       
+        SceneManager.LoadScene(sceneIndex);
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 	
 	
-	void Update ()
-    {
-        Start_Button.onClick.AddListener(Load_scene);
+	
+	////void Update ()
+ //   {
+ //       Start_Button.onClick.AddListener(Load_scene);
        
         
-    }
+ //   }
 
-    public void Load_scene()
-    {
-        SceneManager.LoadScene(1);
-    }
+ //   public void Load_scene()
+ //   {
+ //       SceneManager.LoadScene(1);
+ //   }
 }
