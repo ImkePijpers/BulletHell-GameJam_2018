@@ -36,11 +36,11 @@ public class Spawn : MonoBehaviour {
 
 
     [SerializeField]
-    public Sprite grasslands;
+    public GameObject grasslands;
     [SerializeField]
-    public Sprite Beach;
+    public GameObject Beach;
     [SerializeField]
-    public Sprite Shrine;
+    public GameObject Shrine;
 
 
     
@@ -49,7 +49,8 @@ public class Spawn : MonoBehaviour {
     GameObject[] store_Enemy = new GameObject[20];
     GameObject Player;
     Vector3 pos;
-
+    Vector3 loc = new Vector3(0,0,1);
+    Vector3 Offscreen_Storage = new Vector3(90,90,90);
     Random Randomizer = new Random();
 
     float Time_of_wave;
@@ -65,6 +66,7 @@ public class Spawn : MonoBehaviour {
         pos.y = -7;
         player = Instantiate(player, pos,transform.rotation);
         
+
         //pos.y = 7;
         //Instantiate(enemy_lv1, pos, transform.rotation);
 
@@ -80,6 +82,7 @@ public class Spawn : MonoBehaviour {
 
         if(Theme_amount == 0) //grasslands
         {
+            grasslands.transform.position = loc;
             if(wave_amount >= 0 && wave_start == true && wave_amount <= 1)
             {
                 pos.y = 7;
@@ -142,6 +145,8 @@ public class Spawn : MonoBehaviour {
         }
         else if(Theme_amount == 1) //beach
         {
+            grasslands.transform.position = Offscreen_Storage;
+            Beach.transform.position = loc;
             if (wave_amount >= 0 && wave_start == true)
             {
                 pos.y = 7;
@@ -164,7 +169,7 @@ public class Spawn : MonoBehaviour {
             {
                 pos.y = 7;
                 pos.x = 8;
-                store_Enemy[3] = Instantiate(minion, pos, transform.rotation) as GameObject;
+                store_Enemy[3] = Instantiate(W_minion, pos, transform.rotation) as GameObject;
             }
             wave_start = false;
             if (Time_of_wave >= 20f)

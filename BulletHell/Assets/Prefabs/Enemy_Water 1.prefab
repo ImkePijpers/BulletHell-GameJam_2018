@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
   m_Bullet: {fileID: 0}
-  bullet: {fileID: 50936026729668048, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
+  bullet: {fileID: 50936026729668048, guid: 9b04f4daf8bb34c4dbc4070ebde8a40e, type: 2}
   m_BulletSpeed: 1000
   m_FiringSpeed: 0.2
   target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
@@ -118,7 +118,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7056ff698f9399441b7d1ab9a32b50ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71090d61741d3d849af51e055bc5c52f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
