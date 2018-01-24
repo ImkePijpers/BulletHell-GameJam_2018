@@ -22,6 +22,8 @@ public class Spawn : MonoBehaviour {
     public GameObject W_enemy_lv2;
     [SerializeField]
     public GameObject W_enemy_lv3;
+    [SerializeField]
+    public GameObject W_minion;
 
     [SerializeField]
     public GameObject D_enemy_lv1;
@@ -29,6 +31,9 @@ public class Spawn : MonoBehaviour {
     public GameObject D_enemy_lv2;
     [SerializeField]
     public GameObject D_enemy_lv3;
+    [SerializeField]
+    public GameObject D_minion;
+
 
     [SerializeField]
     public Sprite grasslands;
@@ -75,13 +80,13 @@ public class Spawn : MonoBehaviour {
 
         if(Theme_amount == 0) //grasslands
         {
-            if(wave_amount >= 0 && wave_start == true)
+            if(wave_amount >= 0 && wave_start == true && wave_amount <= 1)
             {
                 pos.y = 7;
                 pos.x = -8;
                 store_Enemy[0] = Instantiate(enemy_lv1, pos, transform.rotation) as GameObject;
             }
-            if (wave_amount >= 1 && wave_start == true)
+            if (wave_amount == 1 && wave_start == true)
             {
                 pos.y = 7;
                 pos.x = -4;
@@ -137,7 +142,64 @@ public class Spawn : MonoBehaviour {
         }
         else if(Theme_amount == 1) //beach
         {
+            if (wave_amount >= 0 && wave_start == true)
+            {
+                pos.y = 7;
+                pos.x = -8;
+                store_Enemy[0] = Instantiate(W_enemy_lv1, pos, transform.rotation) as GameObject;
+            }
+            if (wave_amount >= 1 && wave_start == true)
+            {
+                pos.y = 7;
+                pos.x = -4;
+                store_Enemy[1] = Instantiate(W_enemy_lv2, pos, transform.rotation) as GameObject;
+            }
+            if (wave_amount >= 2 && wave_start == true)
+            {
+                pos.y = 7;
+                pos.x = 4;
+                store_Enemy[2] = Instantiate(W_enemy_lv3, pos, transform.rotation) as GameObject;
+            }
+            if (wave_amount >= 3 && wave_start == true)
+            {
+                pos.y = 7;
+                pos.x = 8;
+                store_Enemy[3] = Instantiate(minion, pos, transform.rotation) as GameObject;
+            }
+            wave_start = false;
+            if (Time_of_wave >= 20f)
+            {
+                if (store_Enemy[0] != null)
+                {
+                    Destroy(store_Enemy[0].gameObject);
+                }
+                if (store_Enemy[1] != null)
+                {
+                    Destroy(store_Enemy[1].gameObject);
+                }
+                if (store_Enemy[2] != null)
+                {
+                    Destroy(store_Enemy[2].gameObject);
+                }
+                if (store_Enemy[3] != null)
+                {
+                    Destroy(store_Enemy[3].gameObject);
+                }
+                //if (player != null)
+                //{
+                //    Destroy(player);
+                //    player = Instantiate(player, pos, transform.rotation);
+                //}
 
+
+                wave_start = true;
+                wave_amount += 1;
+                Time_of_wave = 0;
+            }
+            if (wave_amount >= 4)
+            {
+                Theme_amount += 1;
+            }
 
 
 

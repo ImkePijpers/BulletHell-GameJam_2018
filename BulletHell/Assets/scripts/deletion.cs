@@ -17,7 +17,7 @@ public class deletion : MonoBehaviour {
 
         if (Timer >= 3)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         
 	}
