@@ -12,6 +12,7 @@ public class Walls : MonoBehaviour {
         Destroy(collision.gameObject);
         if (collision.collider.tag == "Player")
         {
+            Debug.Log("Death By Wall");
             SceneManager.LoadScene(2);
         }
             

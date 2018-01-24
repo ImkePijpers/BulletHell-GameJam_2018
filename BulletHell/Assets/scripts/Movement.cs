@@ -65,13 +65,11 @@ public class Movement : MonoBehaviour {
     {
         if (collision.collider.tag == "Enemy_Bullet")
         {
-
-            
-            
-
+           
             health -= 1;
             if (health <= 0)
             {
+                Debug.Log("Death By Bullet");
                 Destroy(this.gameObject);
                 SceneManager.LoadScene(2);
             }
