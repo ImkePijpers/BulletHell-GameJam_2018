@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour {
 
@@ -60,11 +61,12 @@ public class Movement : MonoBehaviour {
 	}
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)///player death
     {
         if (collision.collider.tag == "Enemy_Bullet")
         {
             Destroy(this.gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 }
