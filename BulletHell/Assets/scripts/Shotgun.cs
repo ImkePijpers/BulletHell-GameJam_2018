@@ -59,12 +59,12 @@ public class Shotgun : Bullet {
 
             if (timerl >= firingspeed)
             {
-                Direction.x -= 0.6f;
+                Direction.x -= 0.4f;
                 for (float i = 0; i <= 20; i += 10)
                 {
                     enemy_attackangle.y += i;
                     Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
-                    Direction.x += 0.3f;
+                    Direction.x += 0.2f;
                     newProjectile.AddForce(Direction * m_BulletSpeed);
                 }
                 
