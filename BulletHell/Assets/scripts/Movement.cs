@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour {
     private Transform target;
 
     Vector3 Direction;
-    int health = 3;
+    int health = 999;
     [SerializeField]
     Rigidbody2D bullet;
 
