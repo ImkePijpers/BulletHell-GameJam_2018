@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shotgun : Bullet {
-
-
+public class Advanced_Attacks : Bullet {
 
     [SerializeField]
     Rigidbody2D bullet;
@@ -18,6 +16,7 @@ public class Shotgun : Bullet {
     float m_Speed;
     float firingspeed;
     float timerl;
+    float Timer;
     public override void Find_Target()
     {
         Target = GameObject.FindWithTag("Player");
@@ -36,9 +35,10 @@ public class Shotgun : Bullet {
 
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -55,9 +55,9 @@ public class Shotgun : Bullet {
             Direction = (Target.transform.position - transform.position).normalized;
 
             timerl += Time.deltaTime;
-            
+            Timer += Time.deltaTime;
 
-            if (timerl >= firingspeed)
+            if (timerl >= 0.5f)
             {
                 Direction.x -= 0.6f;
                 for (float i = 0; i <= 20; i += 10)
@@ -67,11 +67,35 @@ public class Shotgun : Bullet {
                     Direction.x += 0.3f;
                     newProjectile.AddForce(Direction * m_BulletSpeed);
                 }
-                
+
 
 
 
                 timerl = 0;
+            }
+
+            if (Timer >= 3f)
+            {
+
+                for (float i = 0; i <= 30; i += 10)
+                {
+                    //enemy_attackangle.x -= i;
+                    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                    Direction.x -= 0.3f;
+                    newProjectile.AddForce(Direction * m_BulletSpeed);
+                }
+                Timer = 0;
+
+                Direction = (Target.transform.position - transform.position).normalized;
+
+
+                for (float i = 0; i <= 30; i += 10)
+                {
+                    //enemy_attackangle.x -= i;
+                    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+                    Direction.x += 0.3f;
+                    newProjectile.AddForce(Direction * m_BulletSpeed);
+                }
             }
         }
     }
@@ -81,7 +105,7 @@ public class Shotgun : Bullet {
         if (collision.collider.tag == "Player_Bullet")
         {
             Destroy(this.gameObject);
-            
+            //Destroy(collision.gameObject);
         }
     }
 }

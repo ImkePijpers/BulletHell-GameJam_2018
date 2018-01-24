@@ -43,19 +43,19 @@ public class Movement : MonoBehaviour {
         mouseposition.y += 1;
         transform.position = Pos_mouse;
 
-        if(Input.GetMouseButton(0))
-        {
-            if (timerl >= 0.2f)
-            {
-                if (bullet != null)
-                {
-                    Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
+        //if(Input.GetMouseButton(0))
+        //{
+        //    if (timerl >= 0.2f)
+        //    {
+        //        if (bullet != null)
+        //        {
+        //            Rigidbody2D newProjectile = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody2D;
 
-                    newProjectile.AddForce(Direction * 1000);
-                }
-                timerl = 0;
-            }
-        }
+        //            newProjectile.AddForce(Direction * 1000);
+        //        }
+        //        timerl = 0;
+        //    }
+        //}
 
 	}
 
