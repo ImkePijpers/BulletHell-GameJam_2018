@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Bullet: {fileID: 50936026729668048, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
   target: {fileID: 1099594464646096, guid: 08e034f266f9cf14296fb5b0fe6d8004, type: 2}
   Bullet: {fileID: 50936026729668048, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
-  m_Bullet_Speed: 1000
-  m_BulletFiring_Speed: 0.6
+  m_Bullet_Speed: 500
+  m_BulletFiring_Speed: 2
 --- !u!212 &212155164119429304
 SpriteRenderer:
   m_ObjectHideFlags: 1
