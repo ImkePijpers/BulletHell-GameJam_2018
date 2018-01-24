@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Start_Game_Script : MonoBehaviour {
+public class Start_Game_Script : MonoBehaviour
+{
+    [SerializeField]
+    
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    
+	void Start ()
+    {
+       
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
+	void Update ()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
