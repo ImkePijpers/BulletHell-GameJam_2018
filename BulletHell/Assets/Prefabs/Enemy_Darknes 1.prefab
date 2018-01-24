@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4675770745078674}
-  - component: {fileID: 114122988222477638}
   - component: {fileID: 61820055840342174}
+  - component: {fileID: 114989841801613870}
   - component: {fileID: 212048759977830320}
   m_Layer: 8
   m_Name: Enemy_Darknes 1
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114122988222477638
+--- !u!114 &114989841801613870
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,15 +75,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1573293748530618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704ee6e085dfbb74e83fb1849555d606, type: 3}
+  m_Script: {fileID: 11500000, guid: b7a7fad81dac8d9419fc2275ee0e9008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
-  m_Bullet: {fileID: 0}
-  bullet: {fileID: 50936026729668048, guid: b08ed42daa87a4c4d8ecffa775704409, type: 2}
+  m_Bullet: {fileID: 50936026729668048, guid: 07cdf64235f6f754ba89d0c86584d2cd, type: 2}
+  bullet: {fileID: 50936026729668048, guid: 07cdf64235f6f754ba89d0c86584d2cd, type: 2}
   m_BulletSpeed: 1000
-  m_FiringSpeed: 0.2
-  target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
+  m_FiringSpeed: 0.5
 --- !u!212 &212048759977830320
 SpriteRenderer:
   m_ObjectHideFlags: 1
