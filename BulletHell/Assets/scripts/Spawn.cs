@@ -58,8 +58,8 @@ public class Spawn : MonoBehaviour
     float preparing_time;
     float Time_of_wave;
     int amount_of_enemies;
-    int wave_amount = 0;//weer op null zetten dadelijk
-    int Theme_amount = 2;// weer op null zetten dadelijk
+    int wave_amount = 3;//weer op null zetten dadelijk
+    int Theme_amount = 1;// weer op null zetten dadelijk
     float[] location = new float[20];
     bool wave_start = true;
 
@@ -111,22 +111,29 @@ public class Spawn : MonoBehaviour
                 wave_start = false;
                 if (Time_of_wave >= 20f)
                 {
-                    if (store_Enemy[0] != null)
+                    for (int i = 0; i < store_Enemy.Length; i++)
                     {
-                        Destroy(store_Enemy[0].gameObject);
+                        if (store_Enemy[i] != null)
+                        {
+                            Destroy(store_Enemy[i].gameObject);
+                        }
                     }
-                    if (store_Enemy[1] != null)
-                    {
-                        Destroy(store_Enemy[1].gameObject);
-                    }
-                    if (store_Enemy[2] != null)
-                    {
-                        Destroy(store_Enemy[2].gameObject);
-                    }
-                    if (store_Enemy[3] != null)
-                    {
-                        Destroy(store_Enemy[3].gameObject);
-                    }
+                    //    if (store_Enemy[0] != null)
+                    //{
+                    //    Destroy(store_Enemy[0].gameObject);
+                    //}
+                    //if (store_Enemy[1] != null)
+                    //{
+                    //    Destroy(store_Enemy[1].gameObject);
+                    //}
+                    //if (store_Enemy[2] != null)
+                    //{
+                    //    Destroy(store_Enemy[2].gameObject);
+                    //}
+                    //if (store_Enemy[3] != null)
+                    //{
+                    //    Destroy(store_Enemy[3].gameObject);
+                    //}
 
                     wave_start = true;
                     wave_amount += 1;
@@ -172,22 +179,30 @@ public class Spawn : MonoBehaviour
                 wave_start = false;
                 if (Time_of_wave >= 20f)
                 {
-                    if (store_Enemy[0] != null)
+                    for (int i = 0; i < store_Enemy.Length; i++)
                     {
-                        Destroy(store_Enemy[0].gameObject);
+                        if (store_Enemy[i] != null)
+                        {
+                            Destroy(store_Enemy[i].gameObject);
+                        }
+                            
                     }
-                    if (store_Enemy[1] != null)
-                    {
-                        Destroy(store_Enemy[1].gameObject);
-                    }
-                    if (store_Enemy[2] != null)
-                    {
-                        Destroy(store_Enemy[2].gameObject);
-                    }
-                    if (store_Enemy[3] != null)
-                    {
-                        Destroy(store_Enemy[3].gameObject);
-                    }
+                    //if (store_Enemy[0] != null)
+                    //{
+                    //    Destroy(store_Enemy[0].gameObject);
+                    //}
+                    //if (store_Enemy[1] != null)
+                    //{
+                    //    Destroy(store_Enemy[1].gameObject);
+                    //}
+                    //if (store_Enemy[2] != null)
+                    //{
+                    //    Destroy(store_Enemy[2].gameObject);
+                    //}
+                    //if (store_Enemy[3] != null)
+                    //{
+                    //    Destroy(store_Enemy[3].gameObject);
+                    //}
 
                     wave_start = true;
                     wave_amount += 1;
@@ -220,7 +235,7 @@ public class Spawn : MonoBehaviour
                 if (wave_amount == 1 && wave_start == true)//lvl-2 heaven
                 {
                     pos.y = 7;
-                    pos.x = -4;
+                    pos.x = -10;
                     store_Enemy[1] = Instantiate(D_enemy_lv2, pos, transform.rotation) as GameObject;
                 }
                 if (wave_amount >= 2 && wave_start == true)//mini boss heaven
@@ -238,26 +253,33 @@ public class Spawn : MonoBehaviour
                 wave_start = false;
                 if (Time_of_wave >= 20f)
                 {
-                    if (store_Enemy[0] != null)
-                    {
-                        Destroy(store_Enemy[0].gameObject);
-                    }
-                    if (store_Enemy[1] != null)
-                    {
-                        Destroy(store_Enemy[1].gameObject);
-                    }
-                    if (store_Enemy[2] != null)
-                    {
-                        Destroy(store_Enemy[2].gameObject);
-                    }
-                    if (store_Enemy[3] != null)
-                    {
-                        Destroy(store_Enemy[3].gameObject);
-                    }
-                    if (store_Enemy[4] != null)
-                    {
-                        Destroy(store_Enemy[4].gameObject);
-                    }
+                        for (int i = 0; i < store_Enemy.Length; i++)
+                        {
+                            if (store_Enemy[i] != null)
+                            {
+                                Destroy(store_Enemy[i].gameObject);
+                            }
+                        }
+                    //        if (store_Enemy[0] != null)
+                    //{
+                    //    Destroy(store_Enemy[0].gameObject);
+                    //}
+                    //if (store_Enemy[1] != null)
+                    //{
+                    //    Destroy(store_Enemy[1].gameObject);
+                    //}
+                    //if (store_Enemy[2] != null)
+                    //{
+                    //    Destroy(store_Enemy[2].gameObject);
+                    //}
+                    //if (store_Enemy[3] != null)
+                    //{
+                    //    Destroy(store_Enemy[3].gameObject);
+                    //}
+                    //if (store_Enemy[4] != null)
+                    //{
+                    //    Destroy(store_Enemy[4].gameObject);
+                    //}
 
 
                     wave_start = true;

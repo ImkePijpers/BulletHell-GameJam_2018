@@ -907,7 +907,7 @@ MonoBehaviour:
     type: 2}
   D_enemy_lv2: {fileID: 1573293748530618, guid: ec517b50b9922fd40a643c852978efe3,
     type: 2}
-  D_enemy_lv3: {fileID: 1573293748530618, guid: f75868e3ccdbff6428a4aa2865438b7f,
+  D_enemy_lv3: {fileID: 1573293748530618, guid: d5d1e18e8f350ea4aa6115e5652fa653,
     type: 2}
   D_minion: {fileID: 0}
   grasslands: {fileID: 514231329}
