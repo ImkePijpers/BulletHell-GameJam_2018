@@ -69,11 +69,8 @@ public class Spawn : MonoBehaviour
     float Time_of_wave;
     int amount_of_enemies;
     int wave_amount = 0;//weer op null zetten dadelijk
-    int Theme_amount = 0;// weer op null zetten dadelijk
-<<<<<<< HEAD
-    
-=======
->>>>>>> cadd7b59aa686e90e73c680e54065b43b256028e
+    int Theme_amount = 2;// weer op null zetten dadelijk
+
     float[] location = new float[20];
     bool wave_start = true;
 
@@ -220,6 +217,9 @@ public class Spawn : MonoBehaviour
                     pos.y = 7;
                     pos.x = -13;
                     store_Enemy[1] = Instantiate(D_enemy_lv2, pos, transform.rotation) as GameObject;
+                    pos.y = -7;
+                    pos.x = 13;
+                    store_Enemy[5]=Instantiate(D_enemy_lv2, pos, transform.rotation) as GameObject;
                 }
                 if (wave_amount >= 2 && wave_start == true)//mini boss heaven
                 {
