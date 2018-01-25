@@ -69,7 +69,7 @@ public class Spawn : MonoBehaviour
     float Time_of_wave;
     int amount_of_enemies;
     int wave_amount = 0;//weer op null zetten dadelijk
-    int Theme_amount = 3;// weer op null zetten dadelijk
+    int Theme_amount = 0;// weer op null zetten dadelijk
     float[] location = new float[20];
     bool wave_start = true;
 
@@ -129,23 +129,7 @@ public class Spawn : MonoBehaviour
                             Destroy(store_Enemy[i].gameObject);
                         }
                     }
-                    //    if (store_Enemy[0] != null)
-                    //{
-                    //    Destroy(store_Enemy[0].gameObject);
-                    //}
-                    //if (store_Enemy[1] != null)
-                    //{
-                    //    Destroy(store_Enemy[1].gameObject);
-                    //}
-                    //if (store_Enemy[2] != null)
-                    //{
-                    //    Destroy(store_Enemy[2].gameObject);
-                    //}
-                    //if (store_Enemy[3] != null)
-                    //{
-                    //    Destroy(store_Enemy[3].gameObject);
-                    //}
-
+                 
                     wave_start = true;
                     wave_amount += 1;
                     Time_of_wave = 0;
@@ -301,13 +285,82 @@ public class Spawn : MonoBehaviour
                     wave_amount += 1;
                     Time_of_wave = 0;
                 }
-                if (wave_amount >= 4)
+                if (wave_amount >= 1)
                 {
+                    wave_amount = 0;
                     Theme_amount += 1;
                 }
 
 
 
+            }
+            else if (Theme_amount == 4) //BOSSES
+            {
+                grasslands.transform.position = Offscreen_Storage;
+                Beach.transform.position = loc;
+                Debug.Log(Theme_amount);
+                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//WATER
+                {
+                    pos.y = 0;
+                    pos.x = 0;
+                    store_Enemy[0] = Instantiate(Boss_Water, pos, transform.rotation) as GameObject;
+                    Debug.Log("boss water check");
+                }
+
+                wave_start = false;
+                if (Time_of_wave >= 20f)
+                {
+                    for (int i = 0; i < store_Enemy.Length; i++)
+                    {
+                        if (store_Enemy[i] != null)
+                        {
+                            Destroy(store_Enemy[i].gameObject);
+                        }
+                    }
+
+                    wave_start = true;
+                    wave_amount += 1;
+                    Time_of_wave = 0;
+                }
+                if (wave_amount >= 1)
+                {
+                    wave_amount = 0;
+                    Theme_amount += 1;
+                }
+            }
+            else if (Theme_amount == 5) //BOSSES
+            {
+                Beach.transform.position = Offscreen_Storage;
+                Shrine.transform.position = loc;
+                Debug.Log(Theme_amount);
+                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//DARKNESS
+                {
+                    pos.y = 0;
+                    pos.x = 0;
+                    store_Enemy[0] = Instantiate(Boss_Darkness, pos, transform.rotation) as GameObject;
+                    Debug.Log("boss darknes check");
+                }
+
+                wave_start = false;
+                if (Time_of_wave >= 20f)
+                {
+                    for (int i = 0; i < store_Enemy.Length; i++)
+                    {
+                        if (store_Enemy[i] != null)
+                        {
+                            Destroy(store_Enemy[i].gameObject);
+                        }
+                    }
+
+                    wave_start = true;
+                    wave_amount += 1;
+                    Time_of_wave = 0;
+                }
+                if (wave_amount >= 1)
+                {
+                    wave_amount = 0;
+                    Theme_amount =0;
+                }
             }
         }
 
