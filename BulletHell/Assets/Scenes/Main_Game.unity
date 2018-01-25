@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485496773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.8, y: -2.6968699, z: 0}
+  m_LocalPosition: {x: -28.6, y: -2.6968699, z: 0}
   m_LocalScale: {x: 1, y: 35.592514, z: 1}
   m_Children: []
   m_Father: {fileID: 1550088626}
@@ -191,7 +191,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0035214424}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -202,7 +202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2, y: 1.02107}
   m_EdgeRadius: 0
 --- !u!33 &485496777
 MeshFilter:
@@ -467,7 +467,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998522279}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.0270033, y: 9, z: 0}
+  m_LocalPosition: {x: 3.0270033, y: 10.1, z: 0}
   m_LocalScale: {x: 1, y: 65.84619, z: 1}
   m_Children: []
   m_Father: {fileID: 1550088626}
@@ -798,7 +798,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1663456225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.5, y: -2.6968699, z: 0}
+  m_LocalPosition: {x: 34.8, y: -2.6968699, z: 0}
   m_LocalScale: {x: 1, y: 35.592514, z: 1}
   m_Children: []
   m_Father: {fileID: 1550088626}
@@ -929,7 +929,7 @@ MonoBehaviour:
   D_enemy_lv3: {fileID: 1573293748530618, guid: f75868e3ccdbff6428a4aa2865438b7f,
     type: 2}
   D_minion: {fileID: 1573293748530618, guid: d5d1e18e8f350ea4aa6115e5652fa653, type: 2}
-  D_minion_2: {fileID: 0}
+  D_minion_2: {fileID: 1573293748530618, guid: d5d1e18e8f350ea4aa6115e5652fa653, type: 2}
   Boss_Fire: {fileID: 1575118788421416, guid: 15f560b72e765d0479d643376bf6945c, type: 2}
   Boss_Water: {fileID: 1627690887315908, guid: 058c1f88f41593343a8d9e9bffa6b85a, type: 2}
   Boss_Darkness: {fileID: 1951761578511352, guid: 8d995da5c259e8f40b1f54d8ae5b3023,
