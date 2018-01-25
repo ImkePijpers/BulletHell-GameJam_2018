@@ -205,10 +205,10 @@ public class Spawn : MonoBehaviour
                 if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//lvl-1 heaven
                 {
                     pos.y = 4;
-                    pos.x = -19;
+                    pos.x = -15;
                     store_Enemy[0] = Instantiate(D_enemy_lv1left, pos, transform.rotation) as GameObject;
                     pos.y = -4;
-                    pos.x = 19;
+                    pos.x = 15;
                     store_Enemy[4] = Instantiate(D_enemy_lv1left, pos, transform.rotation) as GameObject;
                 }
                 if (wave_amount == 1 && wave_start == true)//lvl-2 heaven
