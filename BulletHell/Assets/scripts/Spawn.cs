@@ -212,6 +212,7 @@ public class Spawn : MonoBehaviour {
                 if (wave_amount >= 4)
                 {
                     Theme_amount += 1;
+                    wave_amount = 0;
                 }
 
 
