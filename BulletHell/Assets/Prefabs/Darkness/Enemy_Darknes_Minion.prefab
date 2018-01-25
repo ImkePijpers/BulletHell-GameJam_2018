@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4675770745078674}
+  - component: {fileID: 114122988222477638}
   - component: {fileID: 61820055840342174}
-  - component: {fileID: 114387169300627424}
   - component: {fileID: 212048759977830320}
   m_Layer: 8
-  m_Name: Enemy_Darknes 2
+  m_Name: Enemy_Darknes_Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573293748530618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.55, y: 2.46, z: 0}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: 0.05, y: 3.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!61 &61820055840342174
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114387169300627424
+--- !u!114 &114122988222477638
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,14 +75,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1573293748530618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d7ca018eda11042ace342e55fe2358, type: 3}
+  m_Script: {fileID: 11500000, guid: 704ee6e085dfbb74e83fb1849555d606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
-  m_Bullet: {fileID: 50936026729668048, guid: 537200737b4568a4f81e8f294e2de961, type: 2}
-  bullet: {fileID: 50936026729668048, guid: 537200737b4568a4f81e8f294e2de961, type: 2}
+  m_Bullet: {fileID: 50936026729668048, guid: 3f73cbf22eebc0841b0a58f43c86f6b7, type: 2}
+  bullet: {fileID: 50936026729668048, guid: 3f73cbf22eebc0841b0a58f43c86f6b7, type: 2}
   m_BulletSpeed: 1000
-  m_FiringSpeed: 0.6
+  m_FiringSpeed: 0.2
+  target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
 --- !u!212 &212048759977830320
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6013ccd4bc0d0b144bb4f3917678415c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b96b5537a80f0a34c89bf7ded52305f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

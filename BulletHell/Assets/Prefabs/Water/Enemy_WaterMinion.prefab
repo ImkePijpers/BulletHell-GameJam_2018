@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1074697934624464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -66,11 +66,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1099594464646096, guid: 08e034f266f9cf14296fb5b0fe6d8004, type: 2}
-  m_Bullet: {fileID: 50936026729668048, guid: 9b04f4daf8bb34c4dbc4070ebde8a40e, type: 2}
+  m_Bullet: {fileID: 50936026729668048, guid: 062335fee456ebf4bb98e478d6cc52ac, type: 2}
   target: {fileID: 1099594464646096, guid: 08e034f266f9cf14296fb5b0fe6d8004, type: 2}
-  Bullet: {fileID: 50936026729668048, guid: 9b04f4daf8bb34c4dbc4070ebde8a40e, type: 2}
+  Bullet: {fileID: 50936026729668048, guid: 062335fee456ebf4bb98e478d6cc52ac, type: 2}
   m_Bullet_Speed: 1000
-  m_BulletFiring_Speed: 0.6
+  m_BulletFiring_Speed: 1
 --- !u!212 &212775358793736566
 SpriteRenderer:
   m_ObjectHideFlags: 1

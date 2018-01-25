@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour {
-
+public class Spawn : MonoBehaviour
+{
+    //player
     [SerializeField]
     public GameObject player;
 
+    //fire - forest enemies
     [SerializeField]
     public GameObject enemy_lv1;
     [SerializeField]
@@ -16,6 +18,7 @@ public class Spawn : MonoBehaviour {
     [SerializeField]
     public GameObject minion;
 
+    //water - beach enemies
     [SerializeField]
     public GameObject W_enemy_lv1;
     [SerializeField]
@@ -25,8 +28,11 @@ public class Spawn : MonoBehaviour {
     [SerializeField]
     public GameObject W_minion;
 
+    //darknes - heaven enemies
     [SerializeField]
-    public GameObject D_enemy_lv1;
+    public GameObject D_enemy_lv1left;
+    [SerializeField]
+    public GameObject D_enemy_lv1right;
     [SerializeField]
     public GameObject D_enemy_lv2;
     [SerializeField]
@@ -34,50 +40,39 @@ public class Spawn : MonoBehaviour {
     [SerializeField]
     public GameObject D_minion;
 
-
+    // background scenes
     [SerializeField]
     public GameObject grasslands;
     [SerializeField]
     public GameObject Beach;
     [SerializeField]
     public GameObject Shrine;
-
-
     
-
-
     GameObject[] store_Enemy = new GameObject[20];
     GameObject Player;
     Vector3 pos;
-    Vector3 loc = new Vector3(0,0,1);
-    Vector3 Offscreen_Storage = new Vector3(90,90,90);
+    Vector3 loc = new Vector3(0, 0, 1);
+    Vector3 Offscreen_Storage = new Vector3(90, 90, 90);
     Random Randomizer = new Random();
 
     float preparing_time;
     float Time_of_wave;
     int amount_of_enemies;
-    int wave_amount;
-    int Theme_amount;
+    int wave_amount = 0;//weer op null zetten dadelijk
+    int Theme_amount = 2;// weer op null zetten dadelijk
     float[] location = new float[20];
     bool wave_start = true;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         pos.y = -7;
-        player = Instantiate(player, pos,transform.rotation);
-        
+        player = Instantiate(player, pos, transform.rotation);
+    }
 
-        //pos.y = 7;
-        //Instantiate(enemy_lv1, pos, transform.rotation);
-
-        //pos.y = 7;
-        //pos.x = 7;
-        //Instantiate(minion, pos, transform.rotation);
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         preparing_time += Time.deltaTime;
 
@@ -85,29 +80,29 @@ public class Spawn : MonoBehaviour {
         {
 
             Time_of_wave += Time.deltaTime;
-
+            //////////////////////////////////////////////////////FOREST//////////////////////////////////////////////////////////FOREST///////////
             if (Theme_amount == 0) //grasslands
             {
                 grasslands.transform.position = loc;
-                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)
+                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//lvl-1 fire
                 {
                     pos.y = 7;
                     pos.x = -8;
                     store_Enemy[0] = Instantiate(enemy_lv1, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount == 1 && wave_start == true)
+                if (wave_amount == 1 && wave_start == true)//lvl-2 fire
                 {
                     pos.y = 7;
                     pos.x = -4;
                     store_Enemy[1] = Instantiate(enemy_lv2, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount >= 2 && wave_start == true)
+                if (wave_amount >= 2 && wave_start == true)//mini boss fire
                 {
                     pos.y = 7;
                     pos.x = 4;
                     store_Enemy[2] = Instantiate(enemy_lv3, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount >= 3 && wave_start == true)
+                if (wave_amount >= 3 && wave_start == true)//minion fire
                 {
                     pos.y = 7;
                     pos.x = 8;
@@ -132,12 +127,6 @@ public class Spawn : MonoBehaviour {
                     {
                         Destroy(store_Enemy[3].gameObject);
                     }
-                    //if (player != null)
-                    //{
-                    //    Destroy(player);
-                    //    player = Instantiate(player, pos, transform.rotation);
-                    //}
-
 
                     wave_start = true;
                     wave_amount += 1;
@@ -150,33 +139,34 @@ public class Spawn : MonoBehaviour {
                 }
 
             }
+            /////////////////////////////////////////////BEACH////////////////////////////////////////////BEACH///////////////////////////////////
             else if (Theme_amount == 1) //beach
             {
-                
+
                 grasslands.transform.position = Offscreen_Storage;
                 Beach.transform.position = loc;
-                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)
+                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//lvl-1 water
                 {
-                    pos.y = 7;
-                    pos.x = -8;
+                    pos.y = 0;
+                    pos.x = 0;
                     store_Enemy[0] = Instantiate(W_enemy_lv1, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount == 1 && wave_start == true)
+                if (wave_amount == 1 && wave_start == true)//lvl-2 water
                 {
-                    pos.y = 7;
-                    pos.x = -4;
+                    pos.y = -7;
+                    pos.x = 0;
                     store_Enemy[1] = Instantiate(W_enemy_lv2, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount >= 2 && wave_start == true)
+                if (wave_amount >= 2 && wave_start == true)//mini boss water
                 {
-                    pos.y = 7;
-                    pos.x = 4;
+                    pos.y = 3;
+                    pos.x = 0;
                     store_Enemy[2] = Instantiate(W_enemy_lv3, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount >= 3 && wave_start == true)
+                if (wave_amount >= 3 && wave_start == true)//minion water
                 {
-                    pos.y = 7;
-                    pos.x = 8;
+                    pos.y = 5;
+                    pos.x = 3;
                     store_Enemy[3] = Instantiate(W_minion, pos, transform.rotation) as GameObject;
                 }
                 wave_start = false;
@@ -198,12 +188,6 @@ public class Spawn : MonoBehaviour {
                     {
                         Destroy(store_Enemy[3].gameObject);
                     }
-                    //if (player != null)
-                    //{
-                    //    Destroy(player);
-                    //    player = Instantiate(player, pos, transform.rotation);
-                    //}
-
 
                     wave_start = true;
                     wave_amount += 1;
@@ -218,30 +202,34 @@ public class Spawn : MonoBehaviour {
 
 
             }
-            else if (Theme_amount == 2) //shrine
+            ///////////////////////////////////////////////////HEAVEN//////////////////////////////////////////////////////HEAVEN//////////////////
+            else if (Theme_amount == 2) //heaven
             {
 
                 Beach.transform.position = Offscreen_Storage;
                 Shrine.transform.position = loc;
-                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)
+                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//lvl-1 heaven
                 {
-                    pos.y = 7;
-                    pos.x = -8;
-                    store_Enemy[0] = Instantiate(D_enemy_lv1, pos, transform.rotation) as GameObject;
+                    pos.y = 4;
+                    pos.x = -19;
+                    store_Enemy[0] = Instantiate(D_enemy_lv1left, pos, transform.rotation) as GameObject;
+                    pos.y = -4;
+                    pos.x = 19;
+                    store_Enemy[4] = Instantiate(D_enemy_lv1left, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount == 1 && wave_start == true)
+                if (wave_amount == 1 && wave_start == true)//lvl-2 heaven
                 {
                     pos.y = 7;
                     pos.x = -4;
                     store_Enemy[1] = Instantiate(D_enemy_lv2, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount >= 2 && wave_start == true)
+                if (wave_amount >= 2 && wave_start == true)//mini boss heaven
                 {
                     pos.y = 7;
                     pos.x = 4;
                     store_Enemy[2] = Instantiate(D_enemy_lv3, pos, transform.rotation) as GameObject;
                 }
-                if (wave_amount >= 3 && wave_start == true)
+                if (wave_amount >= 3 && wave_start == true)//minion heaven
                 {
                     pos.y = 7;
                     pos.x = 8;
@@ -266,11 +254,10 @@ public class Spawn : MonoBehaviour {
                     {
                         Destroy(store_Enemy[3].gameObject);
                     }
-                    //if (player != null)
-                    //{
-                    //    Destroy(player);
-                    //    player = Instantiate(player, pos, transform.rotation);
-                    //}
+                    if (store_Enemy[4] != null)
+                    {
+                        Destroy(store_Enemy[4].gameObject);
+                    }
 
 
                     wave_start = true;
@@ -292,5 +279,5 @@ public class Spawn : MonoBehaviour {
 
 
 
-	}
+    }
 }

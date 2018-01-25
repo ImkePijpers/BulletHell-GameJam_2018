@@ -901,7 +901,9 @@ MonoBehaviour:
   W_enemy_lv3: {fileID: 1573293748530618, guid: 1f7bd19bdfc92b34594f11278cf7fd59,
     type: 2}
   W_minion: {fileID: 1074697934624464, guid: 2d25215166ab57a499a02ddea32cf11f, type: 2}
-  D_enemy_lv1: {fileID: 1573293748530618, guid: a2cf788f48640ed45a7ed520b63e59a7,
+  D_enemy_lv1left: {fileID: 1573293748530618, guid: a2cf788f48640ed45a7ed520b63e59a7,
+    type: 2}
+  D_enemy_lv1right: {fileID: 1573293748530618, guid: ce614a5a51491aa4684245fe2f63e13e,
     type: 2}
   D_enemy_lv2: {fileID: 1573293748530618, guid: ec517b50b9922fd40a643c852978efe3,
     type: 2}
