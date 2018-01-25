@@ -84,6 +84,7 @@ public class Spawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Theme_amount);
         preparing_time += Time.deltaTime;
 
         if (preparing_time >= 0.5f)
@@ -269,43 +270,44 @@ public class Spawn : MonoBehaviour
                     Theme_amount += 1;
                 }
                 /////////////////////////////////////////BOSSES///////////////////////////////////////////////////////BOSSES////////////////////////
-                else if (Theme_amount == 3) //BOSSES
+                
+            }
+            else if (Theme_amount == 3) //BOSSES
+            {
+
+                Shrine.transform.position = Offscreen_Storage;
+                grasslands.transform.position = loc;
+                Debug.Log(Theme_amount);
+                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//FIRE
                 {
-
-                    Shrine.transform.position = Offscreen_Storage;
-                    grasslands.transform.position = loc;
-                    Debug.Log(Theme_amount);
-                    if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//FIRE
-                    {
-                        pos.y = 0;
-                        pos.x = 0;
-                        store_Enemy[0] = Instantiate(Boss_Fire, pos, transform.rotation) as GameObject;
-                        Debug.Log("boss fire check");
-                    }
-
-                    wave_start = false;
-                    if (Time_of_wave >= 20f)
-                    {
-                        for (int i = 0; i < store_Enemy.Length; i++)
-                        {
-                            if (store_Enemy[i] != null)
-                            {
-                                Destroy(store_Enemy[i].gameObject);
-                            }
-                        }
-
-                        wave_start = true;
-                        wave_amount += 1;
-                        Time_of_wave = 0;
-                    }
-                    if (wave_amount >= 4)
-                    {
-                        Theme_amount += 1;
-                    }
-
-
-
+                    pos.y = 0;
+                    pos.x = 0;
+                    store_Enemy[0] = Instantiate(Boss_Fire, pos, transform.rotation) as GameObject;
+                    Debug.Log("boss fire check");
                 }
+
+                wave_start = false;
+                if (Time_of_wave >= 20f)
+                {
+                    for (int i = 0; i < store_Enemy.Length; i++)
+                    {
+                        if (store_Enemy[i] != null)
+                        {
+                            Destroy(store_Enemy[i].gameObject);
+                        }
+                    }
+
+                    wave_start = true;
+                    wave_amount += 1;
+                    Time_of_wave = 0;
+                }
+                if (wave_amount >= 4)
+                {
+                    Theme_amount += 1;
+                }
+
+
+
             }
         }
 
