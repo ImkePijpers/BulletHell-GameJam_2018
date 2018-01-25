@@ -39,6 +39,16 @@ public class Spawn : MonoBehaviour
     public GameObject D_enemy_lv3;
     [SerializeField]
     public GameObject D_minion;
+    [SerializeField]
+    public GameObject D_minion_2;
+
+    //Bosses
+    [SerializeField]
+    public GameObject Boss_Fire;
+    [SerializeField]
+    public GameObject Boss_Water;
+    [SerializeField]
+    public GameObject Boss_Darkness;
 
     // background scenes
     [SerializeField]
@@ -58,8 +68,8 @@ public class Spawn : MonoBehaviour
     float preparing_time;
     float Time_of_wave;
     int amount_of_enemies;
-    int wave_amount = 3;//weer op null zetten dadelijk
-    int Theme_amount = 1;// weer op null zetten dadelijk
+    int wave_amount = 0;//weer op null zetten dadelijk
+    int Theme_amount = 3;// weer op null zetten dadelijk
     float[] location = new float[20];
     bool wave_start = true;
 
@@ -185,25 +195,9 @@ public class Spawn : MonoBehaviour
                         {
                             Destroy(store_Enemy[i].gameObject);
                         }
-                            
-                    }
-                    //if (store_Enemy[0] != null)
-                    //{
-                    //    Destroy(store_Enemy[0].gameObject);
-                    //}
-                    //if (store_Enemy[1] != null)
-                    //{
-                    //    Destroy(store_Enemy[1].gameObject);
-                    //}
-                    //if (store_Enemy[2] != null)
-                    //{
-                    //    Destroy(store_Enemy[2].gameObject);
-                    //}
-                    //if (store_Enemy[3] != null)
-                    //{
-                    //    Destroy(store_Enemy[3].gameObject);
-                    //}
 
+                    }
+                  
                     wave_start = true;
                     wave_amount += 1;
                     Time_of_wave = 0;
@@ -240,47 +234,30 @@ public class Spawn : MonoBehaviour
                 }
                 if (wave_amount >= 2 && wave_start == true)//mini boss heaven
                 {
-                    pos.y = 7;
-                    pos.x = 4;
+                    pos.y = 0;
+                    pos.x = 0;
                     store_Enemy[2] = Instantiate(D_enemy_lv3, pos, transform.rotation) as GameObject;
                 }
                 if (wave_amount >= 3 && wave_start == true)//minion heaven
                 {
-                    pos.y = 7;
-                    pos.x = 8;
+                    pos.y = 0;
+                    pos.x = -15;
                     store_Enemy[3] = Instantiate(D_minion, pos, transform.rotation) as GameObject;
+
+                    pos.y = 0;
+                    pos.x = 15;
+                    store_Enemy[4] = Instantiate(D_minion_2, pos, transform.rotation) as GameObject;
                 }
                 wave_start = false;
                 if (Time_of_wave >= 20f)
                 {
-                        for (int i = 0; i < store_Enemy.Length; i++)
+                    for (int i = 0; i < store_Enemy.Length; i++)
+                    {
+                        if (store_Enemy[i] != null)
                         {
-                            if (store_Enemy[i] != null)
-                            {
-                                Destroy(store_Enemy[i].gameObject);
-                            }
+                            Destroy(store_Enemy[i].gameObject);
                         }
-                    //        if (store_Enemy[0] != null)
-                    //{
-                    //    Destroy(store_Enemy[0].gameObject);
-                    //}
-                    //if (store_Enemy[1] != null)
-                    //{
-                    //    Destroy(store_Enemy[1].gameObject);
-                    //}
-                    //if (store_Enemy[2] != null)
-                    //{
-                    //    Destroy(store_Enemy[2].gameObject);
-                    //}
-                    //if (store_Enemy[3] != null)
-                    //{
-                    //    Destroy(store_Enemy[3].gameObject);
-                    //}
-                    //if (store_Enemy[4] != null)
-                    //{
-                    //    Destroy(store_Enemy[4].gameObject);
-                    //}
-
+                    }
 
                     wave_start = true;
                     wave_amount += 1;
@@ -288,11 +265,47 @@ public class Spawn : MonoBehaviour
                 }
                 if (wave_amount >= 4)
                 {
+                    wave_amount = 0;
                     Theme_amount += 1;
                 }
+                /////////////////////////////////////////BOSSES///////////////////////////////////////////////////////BOSSES////////////////////////
+                else if (Theme_amount == 3) //BOSSES
+                {
+
+                    Shrine.transform.position = Offscreen_Storage;
+                    grasslands.transform.position = loc;
+                    Debug.Log(Theme_amount);
+                    if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//FIRE
+                    {
+                        pos.y = 0;
+                        pos.x = 0;
+                        store_Enemy[0] = Instantiate(Boss_Fire, pos, transform.rotation) as GameObject;
+                        Debug.Log("boss fire check");
+                    }
+
+                    wave_start = false;
+                    if (Time_of_wave >= 20f)
+                    {
+                        for (int i = 0; i < store_Enemy.Length; i++)
+                        {
+                            if (store_Enemy[i] != null)
+                            {
+                                Destroy(store_Enemy[i].gameObject);
+                            }
+                        }
+
+                        wave_start = true;
+                        wave_amount += 1;
+                        Time_of_wave = 0;
+                    }
+                    if (wave_amount >= 4)
+                    {
+                        Theme_amount += 1;
+                    }
 
 
 
+                }
             }
         }
 

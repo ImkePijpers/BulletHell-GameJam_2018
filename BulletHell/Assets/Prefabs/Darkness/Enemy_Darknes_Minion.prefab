@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
-  m_Bullet: {fileID: 50936026729668048, guid: 3f73cbf22eebc0841b0a58f43c86f6b7, type: 2}
-  bullet: {fileID: 50936026729668048, guid: 3f73cbf22eebc0841b0a58f43c86f6b7, type: 2}
-  m_BulletSpeed: 1000
-  m_FiringSpeed: 0.2
+  m_Bullet: {fileID: 50936026729668048, guid: 07cdf64235f6f754ba89d0c86584d2cd, type: 2}
+  bullet: {fileID: 50936026729668048, guid: 07cdf64235f6f754ba89d0c86584d2cd, type: 2}
+  m_BulletSpeed: 3000
+  m_FiringSpeed: 1
   target: {fileID: 1099594464646096, guid: b474724b71ece534db44ce779dac4dcc, type: 2}
 --- !u!212 &212048759977830320
 SpriteRenderer:
