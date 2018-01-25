@@ -58,7 +58,7 @@ public class Boss_attack_Water : Bullet {
         if (Target != null)
         {
             timerl += Time.deltaTime;
-            if (timerl >= 5f)
+            if (timerl >= 1f)
             {
                 
                 
