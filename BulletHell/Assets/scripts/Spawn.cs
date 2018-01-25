@@ -69,11 +69,7 @@ public class Spawn : MonoBehaviour
     float Time_of_wave;
     int amount_of_enemies;
     int wave_amount = 0;//weer op null zetten dadelijk
-<<<<<<< HEAD
-    int Theme_amount = 1;// weer op null zetten dadelijk
-=======
-    int Theme_amount = 3;// weer op null zetten dadelijk
->>>>>>> 13d4ccd989bc5610ac334388b2c56bcc99f4a331
+    int Theme_amount = 0;// weer op null zetten dadelijk
     float[] location = new float[20];
     bool wave_start = true;
 
@@ -206,7 +202,7 @@ public class Spawn : MonoBehaviour
 
                 Beach.transform.position = Offscreen_Storage;
                 Shrine.transform.position = loc;
-                if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//lvl-1 heaven
+                if (wave_amount >= 0 && wave_start == true && wave_amount <= 0)//lvl-1 heaven
                 {
                     pos.y = 4;
                     pos.x = -15;
