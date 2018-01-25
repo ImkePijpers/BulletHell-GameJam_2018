@@ -9,11 +9,12 @@ public class Walls : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)//out of screen collison and player deadth trigger 
     {
-        Destroy(collision.gameObject);
-        if (collision.collider.tag == "Player")
+        
+        if (collision.collider.tag == "Enemy_Bullet")
         {
-            Debug.Log("Death By Wall");
-            SceneManager.LoadScene(2);
+            Destroy(collision.gameObject);
+            //Debug.Log("Death By Wall");
+            //SceneManager.LoadScene(2);
         }
             
     }
