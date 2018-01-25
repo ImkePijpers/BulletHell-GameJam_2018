@@ -69,11 +69,8 @@ public class Spawn : MonoBehaviour
     float Time_of_wave;
     int amount_of_enemies;
     int wave_amount = 0;//weer op null zetten dadelijk
-<<<<<<< HEAD
-    int Theme_amount = 1;// weer op null zetten dadelijk
-=======
-    int Theme_amount = 3;// weer op null zetten dadelijk
->>>>>>> 13d4ccd989bc5610ac334388b2c56bcc99f4a331
+    int Theme_amount = 0;// weer op null zetten dadelijk
+    
     float[] location = new float[20];
     bool wave_start = true;
 
@@ -160,7 +157,7 @@ public class Spawn : MonoBehaviour
                 if (wave_amount == 1 && wave_start == true)//lvl-2 water
                 {
                     pos.y = -7;
-                    pos.x = 0;
+                    pos.x = -13;
                     store_Enemy[1] = Instantiate(W_enemy_lv2, pos, transform.rotation) as GameObject;
                 }
                 if (wave_amount >= 2 && wave_start == true)//mini boss water
@@ -209,16 +206,16 @@ public class Spawn : MonoBehaviour
                 if (wave_amount >= 0 && wave_start == true && wave_amount <= 1)//lvl-1 heaven
                 {
                     pos.y = 4;
-                    pos.x = -15;
+                    pos.x = -13;
                     store_Enemy[0] = Instantiate(D_enemy_lv1left, pos, transform.rotation) as GameObject;
                     pos.y = -4;
-                    pos.x = 15;
+                    pos.x = 13;
                     store_Enemy[4] = Instantiate(D_enemy_lv1left, pos, transform.rotation) as GameObject;
                 }
                 if (wave_amount == 1 && wave_start == true)//lvl-2 heaven
                 {
                     pos.y = 7;
-                    pos.x = -10;
+                    pos.x = -13;
                     store_Enemy[1] = Instantiate(D_enemy_lv2, pos, transform.rotation) as GameObject;
                 }
                 if (wave_amount >= 2 && wave_start == true)//mini boss heaven
@@ -230,7 +227,7 @@ public class Spawn : MonoBehaviour
                 if (wave_amount >= 3 && wave_start == true)//minion heaven
                 {
                     pos.y = 0;
-                    pos.x = -15;
+                    pos.x = -13;
                     store_Enemy[3] = Instantiate(D_minion, pos, transform.rotation) as GameObject;
 
                     pos.y = 0;
