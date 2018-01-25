@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour {
     {
         if (collision.collider.tag == "Enemy_Bullet")
         {
-           
+            Destroy(collision.gameObject);
             health -= 1;
             if (health <= 0)
             {

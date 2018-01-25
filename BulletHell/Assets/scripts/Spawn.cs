@@ -69,7 +69,7 @@ public class Spawn : MonoBehaviour
     float Time_of_wave;
     int amount_of_enemies;
     int wave_amount = 0;//weer op null zetten dadelijk
-    int Theme_amount = 0;// weer op null zetten dadelijk
+    int Theme_amount = 3;// weer op null zetten dadelijk
     float[] location = new float[20];
     bool wave_start = true;
 
